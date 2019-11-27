@@ -1,20 +1,13 @@
-// ***********************************************************
-// This example support/index.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+const HOME_PAGE = 'http://localhost:3000'
 
-// Import commands.js using ES2015 syntax:
-import './commands'
+class AddressBookWorld {
+  constructor() {}
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+  async openHomePage() {
+    this.browser = await puppeteer.launch({headless: false, slowmo: 100})
+    this.page = await this.browser.newPage()
+    await this.page.goto(HOME_PAGE)
+  }
+}
+
+setWorldConstructor(AddressBookWorld)
