@@ -1,14 +1,12 @@
 const storage = window.localStorage
 
 const renderContacts = () => {
-  // Read all the contacts from the storage
   const contacts = JSON.parse(storage.getItem('contacts'))
 
   let div = document.querySelector('.contact-list')
 
   if (contacts) {
     div.innerHTML = ''
-    // render the contacts
     const ul = document.createElement('ul')
 
     contacts.forEach(contact => {
@@ -26,7 +24,7 @@ const renderContacts = () => {
   } else {
     div.innerHTML = '<p>You have no contacts in your address book</p>'
   }
-}
+} 
 
 document.addEventListener('DOMContentLoaded', () => {
   renderContacts()
